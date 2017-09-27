@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -31,9 +34,8 @@ public class LoginFragment extends Fragment {
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+
+
      * @return A new instance of fragment LoginFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -59,7 +61,21 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View fragment = inflater.inflate(R.layout.fragment_login, container, false);
+        Button connect = (Button) fragment.findViewById(R.id.button_login);
+
+
+         final EditText name = (EditText) fragment.findViewById(R.id.editText_login_user);
+        connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               String nombre = name.getText().toString();
+                Toast.makeText(getContext(),"Hola " + nombre,Toast.LENGTH_LONG).show();
+            }
+        });
+
+        return fragment;
+
     }
 
 }
