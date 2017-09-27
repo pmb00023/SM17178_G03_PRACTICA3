@@ -9,4 +9,5 @@
     <string name="fragment_login_password">Contraseña</string>
     <string name="fragment_login_ip">IP</string>
     <string name="fragment_login_port">Puerto</string>
+    <string name="fragment_login_button">CONECTAR</string>
 </resources>
