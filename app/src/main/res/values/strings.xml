@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SM17178_G03_PRACTICA1</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_login_title">Práctica 1</string>
+    <string name="fragment_login_description">Servicios móviles. Grado en Ingenería Telemática 2017-2018</string>
+    <string name="fragment_login_user">Usuario</string>
+    <string name="fragment_login_password">Contraseña</string>
+    <string name="fragment_login_ip">IP</string>
+    <string name="fragment_login_port">Puerto</string>
+</resources>
