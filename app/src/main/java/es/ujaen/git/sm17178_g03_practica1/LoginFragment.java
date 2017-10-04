@@ -65,9 +65,9 @@ public class LoginFragment extends Fragment {
         Button connect = (Button) fragment.findViewById(R.id.button_login);
 
 
-        final EditText name = (EditText) fragment.findViewById(R.id.editText_login_user);
-        final EditText user = (EditText) fragment.findViewById(R.id.editText_login_password);
-        final EditText pass = (EditText) fragment.findViewById(R.id.editText_login_ip);
+
+        final EditText user = (EditText) fragment.findViewById(R.id.editText_login_user);
+        final EditText pass = (EditText) fragment.findViewById(R.id.editText_login_password);
         final EditText ip = (EditText) fragment.findViewById(R.id.editText_login_ip);
         final EditText port = (EditText) fragment.findViewById(R.id.editText_login_port);
 
@@ -79,8 +79,8 @@ public class LoginFragment extends Fragment {
                 String s_pass =  pass.getText().toString();
                 String s_ip =  ip.getText().toString();
                 String s_port =  port.getText().toString();
-               String nombre = name.getText().toString();
-                Toast.makeText(getContext(),"Hola " + nombre + " "+s_user+ "" +s_pass+" "+s_ip+" "+s_port,Toast.LENGTH_LONG).show();
+
+                Toast.makeText(getContext(),"Hola " +  " "+s_user+ "" +s_pass+" "+s_ip+" "+s_port,Toast.LENGTH_LONG).show();
             }
         });
 
