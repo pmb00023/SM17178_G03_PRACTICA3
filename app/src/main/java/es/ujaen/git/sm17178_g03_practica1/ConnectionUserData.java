@@ -8,9 +8,25 @@ public class ConnectionUserData extends PersonalData {
     protected String connectionIp="127.0.0.1";
     protected short connectionPort=6000;
 
-    public ConnectionUserData(String user,String pass,String ip,short port){
+    public ConnectionUserData(String user, String pass, String ip, short port){
         super(user,pass);
         this.connectionIp=ip;
         this.connectionPort=port;
+    }
+
+    public String getConnectionIp() {
+        return connectionIp;
+    }
+
+    public void setConnectionIp(String connectionIp) {
+        this.connectionIp = connectionIp;
+    }
+
+    public short getConnectionPort() {
+        return connectionPort;
+    }
+
+    public void setConnectionPort(short connectionPort) {
+        this.connectionPort = connectionPort;
     }
 }

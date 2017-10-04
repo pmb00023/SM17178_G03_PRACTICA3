@@ -1,6 +1,7 @@
 package es.ujaen.git.sm17178_g03_practica1;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -79,9 +80,28 @@ public class LoginFragment extends Fragment {
                 String s_pass =  pass.getText().toString();
                 String s_ip =  ip.getText().toString();
                 String s_port =  port.getText().toString();
+                short port2=0;
+                try{
+                     port2= Short.parseShort(s_port);
+                }catch (java.lang.NumberFormatException ex){
+                    port2=6000;
+                }
+                ConnectionUserData data = new ConnectionUserData(
+                        s_user, s_pass ,s_ip ,s_port
+                );
 
                 Toast.makeText(getContext(),"Hola " +  " "+s_user+ "" +s_pass+" "+s_ip+" "+s_port,Toast.LENGTH_LONG).show();
+
+
+                Intent nueva = new Intent (getActivity(),ServiceActivity.class);
+                nueva.putExtra("param_user",data.getUser());
+                nueva.putExtra("param_pass",data.getPass());
+                nueva.putExtra("param_port",data.getConnectionIp());
+                nueva.putExtra("param_ip",data.getConnectionPort());
+
+                startActivity(nueva);
             }
+
         });
 
         return fragment;
