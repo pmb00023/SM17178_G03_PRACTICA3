@@ -27,9 +27,9 @@
         android:name="es.ujaen.git.sm17178_g03_practica1.LoginFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        tools:layout="@layout/fragment_login"
         android:layout_above="@+id/imageView"
         android:layout_below="@+id/imageView2"
-        tools:layout="@layout/fragment_login" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
