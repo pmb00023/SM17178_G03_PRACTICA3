@@ -94,8 +94,8 @@ public class LoginFragment extends Fragment {
 
 
                 Intent nueva = new Intent (getActivity(),ServiceActivity.class);
-                nueva.putExtra("param_user",data.getUser());
-                nueva.putExtra("param_pass",data.getPass());
+                                    nueva.putExtra("param_user",data.getUser());
+                 nueva.putExtra("param_pass",data.getPass());
                 nueva.putExtra("param_port",data.getConnectionIp());
                 nueva.putExtra("param_ip",data.getConnectionPort());
 
