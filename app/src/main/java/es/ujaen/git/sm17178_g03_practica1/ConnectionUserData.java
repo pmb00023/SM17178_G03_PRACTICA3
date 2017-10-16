@@ -5,21 +5,22 @@ package es.ujaen.git.sm17178_g03_practica1;
  */
 
 public class ConnectionUserData extends PersonalData {
-    protected String connectionIp="127.0.0.1";
+    protected String connectionIP="127.0.0.1";
     protected short connectionPort=6000;
 
-    public ConnectionUserData(String user, String pass, String ip, short port){
+    public ConnectionUserData(String user, String pass, String connectionIP, short connectionPort) {
         super(user,pass);
-        this.connectionIp=ip;
-        this.connectionPort=port;
+        this.connectionIP=connectionIP;
+        this.connectionPort=connectionPort;
+
     }
 
-    public String getConnectionIp() {
-        return connectionIp;
+    public String getConnectionIP() {
+        return connectionIP;
     }
 
-    public void setConnectionIp(String connectionIp) {
-        this.connectionIp = connectionIp;
+    public void setConnectionIP(String connectionIP) {
+        this.connectionIP = connectionIP;
     }
 
     public short getConnectionPort() {
