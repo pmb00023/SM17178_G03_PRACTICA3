@@ -4,27 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context="es.ujaen.git.sm17178_g03_practica1.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/ic_logo_uja" />
+        app:srcCompat="@drawable/ic_logo_uja"
+        android:layout_marginRight="216dp"
+        android:layout_marginEnd="216dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/fragment" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
+
         android:onClick="onIcon"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imageView"
+        android:layout_toStartOf="@+id/imageView" />
 
     <fragment
         android:id="@+id/fragment"
@@ -34,7 +38,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView2"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/volatil"
@@ -44,7 +50,6 @@
         android:layout_marginBottom="12dp"
         android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
-        android:layout_toEndOf="@+id/imageView2"
-        android:layout_toRightOf="@+id/imageView2"
-        android:text="TextView" />
+
+        android:text="@string/app_name" />
 </RelativeLayout>

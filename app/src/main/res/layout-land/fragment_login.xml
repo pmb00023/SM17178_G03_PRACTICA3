@@ -5,9 +5,10 @@
     tools:context="es.ujaen.git.sm17178_g03_practica1.LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <LinearLayout
-        android:layout_width="579dp"
-        android:layout_height="209dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -15,18 +16,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:background="@android:color/holo_blue_dark"
             android:gravity="center_horizontal"
             android:text="@string/fragment_login_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:background="@android:color/holo_blue_dark"
             android:gravity="center_horizontal"
             android:text="@string/fragment_login_description"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,9 +42,9 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1.21"
                 android:text="@string/fragment_login_user"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <EditText
                 android:id="@+id/editText_login_user"
@@ -57,16 +62,17 @@
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_weight="1.00"
+                android:gravity="bottom"
                 android:text="@string/fragment_login_password"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <EditText
-                android:id="@+id/editText_login_password"
+                android:id="@+id/editText_login_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1.28"
                 android:ems="10"
                 android:inputType="textPassword" />
 
@@ -75,20 +81,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="1">
 
             <EditText
                 android:id="@+id/henry1"
                 android:layout_width="132dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.85"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="@string/fragment_login_ip"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <EditText
                 android:id="@+id/editText_login_ip"
-                android:layout_width="wrap_content"
+                android:layout_width="352dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
@@ -96,18 +104,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/henry2"
-                android:layout_width="match_parent"
+                android:layout_width="232dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:ems="10"
+                android:gravity="bottom"
                 android:inputType="textPersonName"
                 android:text="@string/fragment_login_port"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <EditText
                 android:id="@+id/editText_login_port"
@@ -122,14 +130,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button_login"
-                android:layout_width="wrap_content"
+                android:id="@+id/button3"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@android:color/holo_blue_dark"
                 android:text="@string/fragment_login_button" />
         </LinearLayout>
 
