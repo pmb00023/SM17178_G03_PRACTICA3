@@ -87,7 +87,7 @@
             <EditText
                 android:id="@+id/henry1"
                 android:layout_width="132dp"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_weight="0.85"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -109,8 +109,8 @@
 
             <EditText
                 android:id="@+id/henry2"
-                android:layout_width="232dp"
-                android:layout_height="wrap_content"
+                android:layout_width="222dp"
+                android:layout_height="45dp"
                 android:ems="10"
                 android:gravity="bottom"
                 android:inputType="textPersonName"
@@ -134,9 +134,9 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_login"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_blue_dark"
                 android:text="@string/fragment_login_button" />
