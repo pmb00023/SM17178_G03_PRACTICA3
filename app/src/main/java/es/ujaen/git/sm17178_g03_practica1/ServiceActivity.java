@@ -24,6 +24,6 @@ public class ServiceActivity extends AppCompatActivity {
         Short port=getIntent().getShortExtra(PARAM_PORT,(short)6000);
 
         TextView title = (TextView) findViewById(R.id.textView);
-        Toast.makeText(this,"Hola"+user, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Hola, esto proviene del service activity"+user, Toast.LENGTH_SHORT).show();
     }
 }

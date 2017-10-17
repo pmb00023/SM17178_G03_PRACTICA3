@@ -91,7 +91,7 @@ public class LoginFragment extends Fragment {
                     port2= Short.parseShort(s_port);
                 }catch (java.lang.NumberFormatException ex){
                     port2= 6000;
-                }
+                }//si el puerto es nulo utiliza 6000 como puerto
 
                 ConnectionUserData data = new ConnectionUserData(
                         s_user,s_pass,s_ip,port2
@@ -136,7 +136,7 @@ public class LoginFragment extends Fragment {
                 startActivity(nueva);
             }else
             {
-                Toast.makeText(getContext(),"Error autenticando a "+data.getUser(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Error autenticando a "+data.getUser(),Toast.LENGTH_LONG).show();//se obtienen los datos si es ok si no se muestra error autenticado
             }
         }
     }
