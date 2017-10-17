@@ -96,7 +96,8 @@ public class LoginFragment extends Fragment {
                 ConnectionUserData data = new ConnectionUserData(
                         s_user,s_pass,s_ip,port2
                 );
-                Toast.makeText(getContext(),"Hola "+s_user+" "+s_pass+" "+s_ip+":"+port2,Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Hola "+s_user+" con contraseña: "+s_pass+"\n Con direccion Ip" +
+                        ""+s_ip+"y puerto:"+port2+"\n Aquí le dejamos el calendario del mes",Toast.LENGTH_LONG).show();
                 TareaAutentica tarea = new TareaAutentica();
                 tarea.execute(data);
 
