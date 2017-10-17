@@ -18,12 +18,13 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/imageView"
         android:layout_alignEnd="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:onClick="onIcon"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <fragment
         android:id="@+id/fragment"
@@ -34,4 +35,16 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView2"
         tools:layout="@layout/fragment_login" />
+
+    <TextView
+        android:id="@+id/volatil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:text="TextView" />
 </RelativeLayout>
