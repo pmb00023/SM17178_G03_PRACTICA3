@@ -8,16 +8,6 @@
     tools:context="es.ujaen.git.sm17178_g03_practica1.MainActivity">
 
     <ImageView
-        android:id="@+id/iconoujaen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription=""
-        android:clickable="true"
-        app:srcCompat="@drawable/ic_logo_uja" />
-
-    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,4 +36,15 @@
         android:layout_toEndOf="@+id/iconoujaen"
         android:layout_toRightOf="@+id/iconoujaen"
         android:text="@string/app_name" />
+
+    <ImageView
+        android:id="@+id/iconoujaen"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageView2"
+        android:clickable="true"
+        android:contentDescription=""
+        app:srcCompat="@drawable/icono_agri" />
 </RelativeLayout>

@@ -72,8 +72,7 @@ public class LoginFragment extends Fragment {
 
         final EditText user = (EditText) fragment.findViewById(R.id.editText_login_user);
         final EditText pass = (EditText) fragment.findViewById(R.id.editText_login_pass);
-        final EditText ip = (EditText) fragment.findViewById(R.id.editText_login_ip);
-        final EditText port = (EditText) fragment.findViewById(R.id.editText_login_port);
+
 
 
         connect.setOnClickListener(new View.OnClickListener() {
@@ -82,22 +81,12 @@ public class LoginFragment extends Fragment {
             public void onClick(View view) {
                 String s_user = user.getText().toString();
                 String s_pass = pass.getText().toString();
-                String s_ip = ip.getText().toString();
-                String s_port = port.getText().toString();
 
-                short port2=0;
-
-                try{
-                    port2= Short.parseShort(s_port);
-                }catch (java.lang.NumberFormatException ex){
-                    port2= 6000;
-                }//si el puerto es nulo utiliza 6000 como puerto
 
                 ConnectionUserData data = new ConnectionUserData(
-                        s_user,s_pass,s_ip,port2
-                );
+                        s_user,s_pass);
                 Toast.makeText(getContext(),"Hola "+s_user+" con contraseña: "+s_pass+"\n Con direccion Ip" +
-                        ""+s_ip+"y puerto:"+port2+"\n Aquí le dejamos el calendario del mes",Toast.LENGTH_LONG).show();
+                        "\n Aquí le dejamos el calendario del mes",Toast.LENGTH_LONG).show();
                 TareaAutentica tarea = new TareaAutentica();
                 tarea.execute(data);
 
@@ -131,8 +120,7 @@ public class LoginFragment extends Fragment {
                 Intent nueva = new Intent(getActivity(), ServiceActivity.class);
                 nueva.putExtra(ServiceActivity.PARAM_USER, data.getUser());
                 nueva.putExtra("param_pass", data.getPass());
-                nueva.putExtra("param_ip", data.getConnectionIP());
-                nueva.putExtra("param_port", data.getConnectionPort());
+
                 startActivity(nueva);
             }else
             {
