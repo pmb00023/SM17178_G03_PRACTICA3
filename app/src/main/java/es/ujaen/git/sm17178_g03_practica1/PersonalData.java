@@ -5,8 +5,6 @@ package es.ujaen.git.sm17178_g03_practica1;
  */
 
 public class PersonalData {
-    protected String name="";
-    protected String surname="";
 
     protected String user="";
     protected String pass="";
@@ -17,21 +15,6 @@ public class PersonalData {
 
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 
     public String getUser() {
         return user;

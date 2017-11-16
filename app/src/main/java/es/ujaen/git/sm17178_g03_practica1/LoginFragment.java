@@ -14,6 +14,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,8 +93,8 @@ public class LoginFragment extends Fragment {
 
                 ConnectionUserData data = new ConnectionUserData(
                         s_user,s_pass);
-                Toast.makeText(getContext(),"Hola "+s_user+" con contraseña: "+s_pass+"\n Con direccion Ip" +
-                        "\n Aquí le dejamos el calendario del mes",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Hola "+s_user+" con contraseña: "+s_pass+"\n Con direccion Ip"
+                        ,Toast.LENGTH_LONG).show();
                 TareaAutentica tarea = new TareaAutentica();
                 tarea.execute(data);
 
@@ -105,8 +113,26 @@ public class LoginFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     public class TareaAutentica extends AsyncTask<ConnectionUserData,Void,String> {
+
         private ConnectionUserData data;
         public String doInBackground(ConnectionUserData... param){ //Los tres puntos es de java y significa que param puede ser un array
+            try {
+                String s_user = data.user;
+                String s_pass = data.pass;
+                Socket client = new Socket(InetAddress.getByName(www4.ujaen.es),80);
+                BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                DataOutputStream output = new DataOutputStream(client.getOutputStream());
+                String temp = "GET /~jccuevas/ssmm/autentica.php?user="+s_user+"&pass="+s_pass+" HTTP/1.1\r\nhost:www4.ujaen.es\n\r\n\r\n";
+                output.write(temp.getBytes());
+                String line;
+                while ((line=input.readLine())!=null) {
+                    System.out.println(line);
+                }
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             if(param!=null)
                 if(param.length>=1)
                     data=param[0];
