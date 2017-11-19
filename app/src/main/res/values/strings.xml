@@ -13,4 +13,6 @@
     <string name="fragment_app_riego">Activar el riego</string>
     <string name="activity_button_on">ON</string>
     <string name="activity_button_OFF">OFF</string>
+    <string name="welcome_name">Bienvenido a AGRAPP</string>
+    <string name="welcome_button">Comenzar</string>
 </resources>

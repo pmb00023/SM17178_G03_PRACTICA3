@@ -116,10 +116,10 @@ public class LoginFragment extends Fragment {
 
         private ConnectionUserData data;
         public String doInBackground(ConnectionUserData... param){ //Los tres puntos es de java y significa que param puede ser un array
-            try {
+            /*try {
                 String s_user = data.user;
                 String s_pass = data.pass;
-                Socket client = new Socket(InetAddress.getByName(www4.ujaen.es),80);
+                Socket client = new Socket(InetAddress.getByName("www4.ujaen.es"),80);
                 BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 DataOutputStream output = new DataOutputStream(client.getOutputStream());
                 String temp = "GET /~jccuevas/ssmm/autentica.php?user="+s_user+"&pass="+s_pass+" HTTP/1.1\r\nhost:www4.ujaen.es\n\r\n\r\n";
@@ -132,7 +132,8 @@ public class LoginFragment extends Fragment {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            }
+
+*/
             if(param!=null)
                 if(param.length>=1)
                     data=param[0];
