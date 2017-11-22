@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo"
+    android:background="@android:color/holo_green_light"
     tools:context="es.ujaen.git.sm17178_g03_practica1.MainActivity">
 
 

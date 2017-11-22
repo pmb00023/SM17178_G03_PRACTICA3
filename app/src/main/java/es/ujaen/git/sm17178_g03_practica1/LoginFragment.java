@@ -115,31 +115,33 @@ public class LoginFragment extends Fragment {
     public class TareaAutentica extends AsyncTask<ConnectionUserData,Void,String> {
 
         private ConnectionUserData data;
-        public String doInBackground(ConnectionUserData... param){ //Los tres puntos es de java y significa que param puede ser un array
-            /*try {
+        public String doInBackground(ConnectionUserData... param) { //Los tres puntos es de java y significa que param puede ser un array
+            try {
+                data=param[0];
                 String s_user = data.user;
                 String s_pass = data.pass;
-                Socket client = new Socket(InetAddress.getByName("www4.ujaen.es"),80);
+                Socket client = new Socket(InetAddress.getByName("www4.ujaen.es"), 80);
                 BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 DataOutputStream output = new DataOutputStream(client.getOutputStream());
-                String temp = "GET /~jccuevas/ssmm/autentica.php?user="+s_user+"&pass="+s_pass+" HTTP/1.1\r\nhost:www4.ujaen.es\n\r\n\r\n";
+                String temp = "GET /~jccuevas/ssmm/autentica.php?user=" + s_user + "&pass=" + s_pass + " HTTP/1.1\r\nhost:www4.ujaen.es\n\r\n\r\n";
                 output.write(temp.getBytes());
                 String line;
-                while ((line=input.readLine())!=null) {
+                while ((line = input.readLine()) != null) {
                     System.out.println(line);
                 }
             } catch (UnknownHostException e) {
                 e.printStackTrace();
             } catch (IOException e) {
-                e.printStackTrace();
+                e.printStackTrace();}
 
-*/
-            if(param!=null)
-                if(param.length>=1)
-                    data=param[0];
-            //TODO proceso de autenticación
-            return "OK";//OK si la operacion fue correcta y si no otro valor
-        }
+
+                if (param != null)
+                    if (param.length >= 1)
+                        data = param[0];
+                //TODO proceso de autenticación
+                return "OK";//OK si la operacion fue correcta y si no otro valor
+            }
+
 
         public void onPostExecute(String result){
 

@@ -4,43 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo"
+    android:background="@android:color/holo_green_light"
     tools:context="es.ujaen.git.sm17178_g03_practica1.MainActivity">
 
     <ImageView
         android:id="@+id/iconoujaen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_logo_uja"
-        android:layout_marginRight="216dp"
-        android:layout_marginEnd="216dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
+        android:layout_above="@+id/fragment"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/fragment" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="216dp"
+        android:layout_marginRight="216dp"
+        app:srcCompat="@drawable/ic_logo_uja" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:onClick="onIcon"
-        app:srcCompat="@mipmap/ic_launcher"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/iconoujaen"
-        android:layout_toStartOf="@+id/iconoujaen" />
+        android:layout_toStartOf="@+id/iconoujaen"
+        android:onClick="onIcon"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <fragment
         android:id="@+id/fragment"
         android:name="es.ujaen.git.sm17178_g03_practica1.LoginFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView2"
-        tools:layout="@layout/fragment_login"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        tools:layout="@layout/fragment_login" />
 
     <TextView
         android:id="@+id/volatil"
