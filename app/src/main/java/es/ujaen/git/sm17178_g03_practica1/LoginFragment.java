@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -125,6 +126,7 @@ public class LoginFragment extends Fragment {
                 DataOutputStream output = new DataOutputStream(client.getOutputStream());
                 String temp = "GET /~jccuevas/ssmm/autentica.php?user=" + s_user + "&pass=" + s_pass + " HTTP/1.1\r\nhost:www4.ujaen.es\n\r\n\r\n";
                 output.write(temp.getBytes());
+
                 String line;
                 while ((line = input.readLine()) != null) {
                     System.out.println(line);
