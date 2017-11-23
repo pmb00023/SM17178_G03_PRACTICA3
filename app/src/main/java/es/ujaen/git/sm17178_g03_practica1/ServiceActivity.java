@@ -30,14 +30,30 @@ public class ServiceActivity extends AppCompatActivity {
                 startActivity(siguiente);
             }
         });
-
-
-
         String user=getIntent().getStringExtra(PARAM_USER);
         String pass=getIntent().getStringExtra(PARAM_PASS);
+
+
+        Toast.makeText(getApplicationContext(),"Hola "+user+"tepareces a jacinto\n Con direccion Ip"
+                ,Toast.LENGTH_LONG).show();
+
+
+
+
+
 
 
         TextView title = (TextView) findViewById(R.id.textView);
         Toast.makeText(this,"Hola, esto proviene del service activity"+user, Toast.LENGTH_SHORT).show();
     }
+    public void onPostExecute(String result) {
+        Intent intent = new Intent(this,base_aplication.class );
+        intent.putExtra("usuario", PARAM_USER);
+        startActivity(intent);
+        TextView title = (TextView) findViewById(R.id.textView);
+        Toast.makeText(this,"Hola, esto proviene del service activity"+PARAM_USER, Toast.LENGTH_SHORT).show();
+    }
+
+
+
 }
