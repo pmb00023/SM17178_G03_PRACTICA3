@@ -8,16 +8,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class base_aplication extends AppCompatActivity {
+public class BaseAplication extends AppCompatActivity {
     public static final String PARAM_USER = "param_user";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_aplication);
-        Bundle bundl = getIntent().getExtras();
 
-            String user = bundl.getString("usuario");
+           String user = getIntent().getStringExtra(ServiceActivity.PARAM_USER);
 
 
 

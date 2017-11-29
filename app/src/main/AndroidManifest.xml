@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ServiceActivity" />
-        <activity android:name=".base_aplication"  android:parentActivityName=".ServiceActivity" >
+        <activity android:name=".BaseAplication"  android:parentActivityName=".ServiceActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
