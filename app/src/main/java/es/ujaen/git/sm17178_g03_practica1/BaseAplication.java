@@ -16,7 +16,7 @@ public class BaseAplication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_aplication);
 
-           String user = getIntent().getStringExtra(ServiceActivity.PARAM_USER);
+           String user = getIntent().getStringExtra(PARAM_USER);
 
 
 

@@ -28,7 +28,7 @@ public class ServiceActivity extends AppCompatActivity {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent siguiente = new Intent(ServiceActivity.this, BaseAplication.class);
+                Intent siguiente = new Intent(ServiceActivity.this, MainActivity.class);
                 siguiente.putExtra(PARAM_USER,user);
                 startActivity(siguiente);
             }
