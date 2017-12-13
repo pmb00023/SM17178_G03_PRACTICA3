@@ -15,4 +15,6 @@
     <string name="activity_button_OFF">OFF</string>
     <string name="welcome_name">Bienvenido a AGRAPP</string>
     <string name="welcome_button">Comenzar</string>
+    <string name="Localizacion">Localizacion</string>
+    <string name="PropiedadesTe">Propiedades</string>
 </resources>

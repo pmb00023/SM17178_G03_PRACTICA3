@@ -148,6 +148,7 @@ public class LoginFragment extends Fragment {
         public void onPostExecute(String result){
 
             if(result.compareToIgnoreCase("OK")==0) {
+
                 Intent nueva = new Intent(getActivity(), BaseAplication.class);
                 nueva.putExtra(BaseAplication.PARAM_USER, data.getUser());
                 nueva.putExtra("param_pass", data.getPass());
