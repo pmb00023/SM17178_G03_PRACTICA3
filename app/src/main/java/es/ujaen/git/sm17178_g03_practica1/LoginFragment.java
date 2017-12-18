@@ -47,8 +47,7 @@ public class LoginFragment extends Fragment {
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-
-
+     *
      * @return A new instance of fragment LoginFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -78,10 +77,8 @@ public class LoginFragment extends Fragment {
         Button connect = (Button) fragment.findViewById(R.id.button_login);
 
 
-
         final EditText user = (EditText) fragment.findViewById(R.id.editText_login_user);
         final EditText pass = (EditText) fragment.findViewById(R.id.editText_login_pass);
-
 
 
         connect.setOnClickListener(new View.OnClickListener() {
@@ -93,11 +90,18 @@ public class LoginFragment extends Fragment {
 
 
                 ConnectionUserData data = new ConnectionUserData(
-                        s_user,s_pass);
-                Toast.makeText(getContext(),"Hola "+s_user+" con contraseña: "+s_pass+"\n Con direccion Ip"
-                        ,Toast.LENGTH_LONG).show();
+                        s_user, s_pass);
+                Toast.makeText(getContext(), "Hola " + s_user + " con contraseña: " + s_pass + "\n Con direccion Ip"
+                        , Toast.LENGTH_LONG).show();
                 TareaAutentica tarea = new TareaAutentica();
                 tarea.execute(data);
+                //Intent nueva = new Intent(getActivity(), BaseAplication.class);
+               // nueva.putExtra(BaseAplication.PARAM_USER, data.getUser());
+                //nueva.putExtra("param_pass", data.getPass());
+
+                //startActivity(nueva);
+
+
 
                 /*Intent nueva = new Intent(getActivity(),ServiceActivity.class); //Prepara la actividad, se puede llamar tambien a otras aplicaciones
                 nueva.putExtra(ServiceActivity.PARAM_USER,data.getUser());
@@ -111,7 +115,6 @@ public class LoginFragment extends Fragment {
 
         return fragment;
     }
-
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     public class TareaAutentica extends AsyncTask<ConnectionUserData,Void,String> {
 
@@ -137,12 +140,12 @@ public class LoginFragment extends Fragment {
                 e.printStackTrace();}
 
 
-                if (param != null)
-                    if (param.length >= 1)
-                        data = param[0];
-                //TODO proceso de autenticación
-                return "OK";//OK si la operacion fue correcta y si no otro valor
-            }
+            if (param != null)
+                if (param.length >= 1)
+                    data = param[0];
+            //TODO proceso de autenticación
+            return "OK";//OK si la operacion fue correcta y si no otro valor
+        }
 
 
         public void onPostExecute(String result){
@@ -160,6 +163,12 @@ public class LoginFragment extends Fragment {
             }
         }
     }
-
-
 }
+
+
+
+
+
+
+
+

@@ -17,4 +17,6 @@
     <string name="welcome_button">Comenzar</string>
     <string name="Localizacion">Localizacion</string>
     <string name="PropiedadesTe">Propiedades</string>
+    <string name="base_text">Pincha en la imagen para encontrar tiendas de productos agrarios</string>
+    <string name="BotonLlamada">Atención al cliente</string>
 </resources>

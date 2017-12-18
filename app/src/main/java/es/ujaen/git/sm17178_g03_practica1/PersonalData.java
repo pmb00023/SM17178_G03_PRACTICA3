@@ -9,9 +9,12 @@ public class PersonalData {
     protected String user="";
     protected String pass="";
 
-    public PersonalData(String user, String pass) {
+    public PersonalData(String user, String pass){
         this.user=user;
         this.pass=pass;
+    }
+
+    public PersonalData(){
 
     }
 

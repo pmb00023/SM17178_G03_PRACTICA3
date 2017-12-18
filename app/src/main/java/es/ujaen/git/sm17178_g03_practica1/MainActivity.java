@@ -36,13 +36,6 @@ public class MainActivity extends AppCompatActivity {
         });//funcion para llevar a la url a la variable iconoujaen en este caso una imagen
 
 
-        if(savedInstanceState!=null){
-            datosvolatiles=savedInstanceState.getString("volatil",datosvolatiles);
-        }
-
-        volatil = (TextView) findViewById(R.id.volatil);
-        volatil.setText(datosvolatiles);//guarda datos volatiles en volatil
-
 
     }
 

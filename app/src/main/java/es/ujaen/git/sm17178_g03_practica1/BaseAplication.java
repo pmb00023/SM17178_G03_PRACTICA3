@@ -12,13 +12,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class BaseAplication extends AppCompatActivity {
     public static final String PARAM_USER = "param_user";
 
-    public class MyLocationListener implements LocationListener {
+
+   /* public class MyLocationListener implements LocationListener {
         MainActivity mainActivity;
 
         public MainActivity getMainActivity() {
@@ -63,18 +74,30 @@ public class BaseAplication extends AppCompatActivity {
             // espera que este disponible en breve
             // AVAILABLE -> Disponible
         }
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_aplication);
+        ImageView img = (ImageView)findViewById(R.id.ImagClick);//encuentra la imagen por su id
+
+        img.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://jaenagricola.es"));
+                startActivity(intent);
+            }
+        });//funcion para llevar a la url a la variable iconoujaen en este caso una imagen
 
            String user = getIntent().getStringExtra(PARAM_USER);
 
 
 
-            final String[] datos = new String[]{"Elem1 su valor es " + user, "Elem2", "Elem3", "Elem4", "Elem5"};
+            final String[] datos = new String[]{"Riego", "PH", "Abono", "Humedad"};
             ArrayAdapter<String> adaptador = new
                     ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
             final Spinner cmbOpciones =
@@ -93,10 +116,32 @@ public class BaseAplication extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Button b_telefono = (Button) findViewById(R.id.botonllamada);
+        b_telefono.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v) {
+                Uri num = Uri.parse("tel:" + "123456789");
+                Intent i = new Intent(Intent.ACTION_CALL, num);
+                startActivity(i);
+            }
+        });
+        
+
+
+
+
+
+    }
+
+
+
+
+}
+
+        /*LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         MyLocationListener mlocListener = new MyLocationListener();
         mlocListener.setMainActivity(this);
-        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,(LocationListener) mlocListener);
+        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,(LocationListener) mlocListener);*/
 
 
         /*cmbOpciones.setOnItemSelectedListener(
@@ -108,5 +153,5 @@ public class BaseAplication extends AppCompatActivity {
                         lblMensaje.setText(""); }
                 });*/
 
-    }
-}
+
+

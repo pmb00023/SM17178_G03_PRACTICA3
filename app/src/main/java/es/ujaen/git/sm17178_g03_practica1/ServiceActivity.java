@@ -12,6 +12,8 @@ public class ServiceActivity extends AppCompatActivity {
 
     public static final String PARAM_USER = "param_user";
     public static final String PARAM_PASS = "param_pass";
+    public static final String PARAM_IP = "param_ip";
+    public static final String PARAM_PORT = "param_port";
 
     Button siguiente;
 
@@ -22,6 +24,9 @@ public class ServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_service);
         final String user=getIntent().getStringExtra(PARAM_USER);
         String pass=getIntent().getStringExtra(PARAM_PASS);
+        String ip = getIntent().getStringExtra(PARAM_IP);
+        short port = getIntent().getShortExtra(PARAM_PORT, (short)6000);
+
 
         siguiente = (Button)findViewById(R.id.initial_button);
 
@@ -35,7 +40,7 @@ public class ServiceActivity extends AppCompatActivity {
         });
 
 
-        Toast.makeText(getApplicationContext(),"Hola "+user+"tepareces a jacinto\n Con direccion Ip"
+        Toast.makeText(getApplicationContext(),"Hola "+user+"\n Con direccion Ip"+ip
                 ,Toast.LENGTH_LONG).show();
 
 
