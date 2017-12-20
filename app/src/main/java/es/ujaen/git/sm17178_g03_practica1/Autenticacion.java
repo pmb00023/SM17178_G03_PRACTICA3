@@ -29,7 +29,7 @@ import java.net.UnknownHostException;
     String expiresEnd = "";
     Boolean error = true;
     private Context mContext = null;
-    public static final String PREFS_SESION = "sesion_details";
+
 
 
     public Autenticacion(Context context) {
@@ -87,28 +87,31 @@ import java.net.UnknownHostException;
         }
 
 
-        if (param != null)
-            if (param.length >= 1)
-                data = param[0];
-        //TODO proceso de autenticación
-        return "OK";//OK si la operacion fue correcta y si no otro valor
+
+        return "ERROR";//OK si la operacion fue correcta y si no otro valor
     }
 
 
     public void onPostExecute(String result) {
-        Intent nueva = new Intent(mContext, BaseAplication.class);
+        String user=data.getUser();
+        String pass=data.getPass();
+
 
         if (result.compareToIgnoreCase("OK") == 0) {
 
-            nueva.putExtra(BaseAplication.PARAM_USER, data.getUser());
-            nueva.putExtra("param_pass", data.getPass());
-            mContext.startActivity(nueva);
-            SharedPreferences sesion = mContext.getSharedPreferences(PREFS_SESION, 0);
-            SharedPreferences.Editor editor = sesion.edit();
 
+            SharedPreferences sesion = mContext.getSharedPreferences("Mis preferencias",Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sesion.edit();
+            //editor.putString("user",user);
+            //editor.putString("Pass",pass);
             editor.putString("expires", expiresEnd);
             editor.putString("sesionID", SesionIDend);
             editor.commit();
+            Intent nueva = new Intent(mContext, BaseAplication.class);
+            nueva.putExtra(BaseAplication.PARAM_USER, data.getUser());
+
+            mContext.startActivity(nueva);
+            //Toast.makeText(mContext,"Autentication"+user, Toast.LENGTH_SHORT).show();
 
         }
     }
