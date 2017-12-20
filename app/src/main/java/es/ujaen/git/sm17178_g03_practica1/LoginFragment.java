@@ -1,12 +1,15 @@
 package es.ujaen.git.sm17178_g03_practica1;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -38,11 +42,13 @@ public class LoginFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private int mParam2;
+    String SesionIDend = "";
+    String expiresEnd = "";
+    Boolean error = true;
+    private Context mContext=null;
 
 
-    public LoginFragment() {
-        // Required empty public constructor
-    }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -77,6 +83,7 @@ public class LoginFragment extends Fragment {
         Button connect = (Button) fragment.findViewById(R.id.button_login);
 
 
+
         final EditText user = (EditText) fragment.findViewById(R.id.editText_login_user);
         final EditText pass = (EditText) fragment.findViewById(R.id.editText_login_pass);
 
@@ -89,14 +96,18 @@ public class LoginFragment extends Fragment {
                 String s_pass = pass.getText().toString();
 
 
-                ConnectionUserData data = new ConnectionUserData(
-                        s_user, s_pass);
-                Toast.makeText(getContext(), "Hola " + s_user + " con contraseña: " + s_pass + "\n Con direccion Ip"
+
+
+
+                ConnectionUserData data = new ConnectionUserData(s_user, s_pass);
+                Autenticacion autenticacion = new Autenticacion(getActivity());
+                autenticacion.execute(data);
+                Toast.makeText(getContext(), "Iniciando sesión: " + s_user + "\n Con direccion Ip"
                         , Toast.LENGTH_LONG).show();
-                TareaAutentica tarea = new TareaAutentica();
-                tarea.execute(data);
+
+
                 //Intent nueva = new Intent(getActivity(), BaseAplication.class);
-               // nueva.putExtra(BaseAplication.PARAM_USER, data.getUser());
+                // nueva.putExtra(BaseAplication.PARAM_USER, data.getUser());
                 //nueva.putExtra("param_pass", data.getPass());
 
                 //startActivity(nueva);
@@ -115,56 +126,10 @@ public class LoginFragment extends Fragment {
 
         return fragment;
     }
-    @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
-    public class TareaAutentica extends AsyncTask<ConnectionUserData,Void,String> {
-
-        private ConnectionUserData data;
-        public String doInBackground(ConnectionUserData... param) { //Los tres puntos es de java y significa que param puede ser un array
-            try {
-                data=param[0];
-                String s_user = data.user;
-                String s_pass = data.pass;
-                Socket client = new Socket(InetAddress.getByName("www4.ujaen.es"), 80);
-                BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                DataOutputStream output = new DataOutputStream(client.getOutputStream());
-                String temp = "GET /~jccuevas/ssmm/autentica.php?user=" + s_user + "&pass=" + s_pass + " HTTP/1.1\r\nhost:www4.ujaen.es\n\r\n\r\n";
-                output.write(temp.getBytes());
-
-                String line;
-                while ((line = input.readLine()) != null) {
-                    System.out.println(line);
-                }
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();}
 
 
-            if (param != null)
-                if (param.length >= 1)
-                    data = param[0];
-            //TODO proceso de autenticación
-            return "OK";//OK si la operacion fue correcta y si no otro valor
-        }
 
-
-        public void onPostExecute(String result){
-
-            if(result.compareToIgnoreCase("OK")==0) {
-
-                Intent nueva = new Intent(getActivity(), BaseAplication.class);
-                nueva.putExtra(BaseAplication.PARAM_USER, data.getUser());
-                nueva.putExtra("param_pass", data.getPass());
-
-                startActivity(nueva);
-            }else
-            {
-                Toast.makeText(getContext(),"Error autenticando a "+data.getUser(),Toast.LENGTH_LONG).show();//se obtienen los datos si es ok si no se muestra error autenticado
-            }
-        }
-    }
 }
-
 
 
 
