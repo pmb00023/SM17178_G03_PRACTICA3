@@ -17,7 +17,7 @@ public class ServiceActivity extends AppCompatActivity {
 
     Button siguiente;
 
-
+//Aqui realizamos la bienvenida a la aplicación
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +27,7 @@ public class ServiceActivity extends AppCompatActivity {
         String ip = getIntent().getStringExtra(PARAM_IP);
         short port = getIntent().getShortExtra(PARAM_PORT, (short)6000);
 
-
+//Al pulsar el boton nos lanza a la siguiente actividad,en este caso el MainActivity
         siguiente = (Button)findViewById(R.id.initial_button);
 
         siguiente.setOnClickListener(new View.OnClickListener() {
@@ -40,8 +40,7 @@ public class ServiceActivity extends AppCompatActivity {
         });
 
 
-        Toast.makeText(getApplicationContext(),"Hola "+user+"\n Con direccion Ip"+ip
-                ,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext()," "+user+"\n Con direccion Ip"+ip,Toast.LENGTH_LONG).show();
 
 
 
@@ -49,8 +48,8 @@ public class ServiceActivity extends AppCompatActivity {
 
 
 
-        TextView title = (TextView) findViewById(R.id.textView);
-        Toast.makeText(this,"Hola, esto proviene del service activity"+user, Toast.LENGTH_SHORT).show();
+        //TextView title = (TextView) findViewById(R.id.textView);
+        //Toast.makeText(this,"Hola, esto proviene del service activity"+user, Toast.LENGTH_SHORT).show();
     }
 
 

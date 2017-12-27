@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-
+//al pulsar sobre la imagen nos lanza a la página de la uja
             ImageView img = (ImageView)findViewById(R.id.iconoujaen);//encuentra la imagen por su id
 
             img.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });//funcion para llevar a la url a la variable iconoujaen en este caso una imagen
-
+//Metodo para obtener la fecha actual
             Calendar calendarNow = new GregorianCalendar(TimeZone.getTimeZone("Europe/Madrid"));
             int year = calendarNow.get(Calendar.YEAR);
             int monthDay =calendarNow.get(Calendar.DAY_OF_MONTH);
@@ -54,21 +54,30 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sesion.edit();
             editor.putString("Date", Date);
             editor.commit();*/
-            SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+//Cargamos las preferencias para poder acceder así a la fecha de expiracion  de sesion
             SharedPreferences settings = this.getSharedPreferences("Mis preferencias", 0);
-            String expiresend  = settings.getString("expires", "");
-
-            //if(Date.compareTo(expiresend)==0){
-                /*ConnectionUserData data = new ConnectionUserData(s_user, s_pass);
-                Autenticacion autenticacion = new Autenticacion(getActivity());
-                autenticacion.execute(data);*/
+            //String expiresend  = settings.getString("expires", "");
+            String user = settings.getString("user","");
+            //String pass = settings.getString("pass","");
+           // String sesionID = settings.getString("sesionID","");
 
 
+            String Expire  = settings.getString("Expires", "");
+           // String Sesion  = settings.getString("SesionId", "");
+           // Toast.makeText(this,"que polas"+sesionID+expiresend,Toast.LENGTH_SHORT).show();
+
+//Comparamos las fechas, si la actual es mayor que la de expiración debemos volver a pedir el usuario sino
+// se carga directamente la siguiente actividad con los datos anteriores
+        if(Date.compareTo(Expire)>=0){
+                Toast.makeText(this,"Bienvenido "+user,Toast.LENGTH_SHORT).show();
+                Intent nueva = new Intent(this, BaseAplication.class);
+                this.startActivity(nueva);
+            }
+            else{
+                Toast.makeText(this,"Introduzca de nuevo su usuario, su sesión ha caducado",Toast.LENGTH_LONG).show();
 
 
-
-
-            //}
+            }
 
 
 

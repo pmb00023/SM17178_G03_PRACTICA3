@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    tools:context="es.ujaen.git.sm17178_g03_practica1.ServiceActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="518dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Spinner
+                android:id="@+id/CmbOpciones"
+                android:layout_width="300dp"
+                android:layout_height="match_parent" />
+
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.00"
+                android:background="@drawable/botonpulsado"
+                android:text="@string/activity_button_OFF" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="61dp">
+
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@string/Localizacion"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <ImageButton
+                android:id="@+id/Localizacion"
+                android:layout_width="140dp"
+                android:layout_height="76dp"
+                android:layout_weight="1.00"
+                android:clickable="true"
+                app:srcCompat="@drawable/mapa" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center"
+                android:text="@string/base_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <ImageView
+                android:id="@+id/ImagClick"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icono_agri" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/botonllamada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/BotonLlamada" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

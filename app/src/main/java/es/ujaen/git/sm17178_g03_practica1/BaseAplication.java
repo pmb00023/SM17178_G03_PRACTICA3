@@ -29,59 +29,14 @@ public class BaseAplication extends AppCompatActivity {
     public static final String PARAM_USER = "param_user";
 
 
-   /* public class MyLocationListener implements LocationListener {
-        MainActivity mainActivity;
 
-        public MainActivity getMainActivity() {
-            return mainActivity;
-        }
-
-        public void setMainActivity(MainActivity mainActivity) {
-            this.mainActivity = mainActivity;
-        }
-
-        @Override
-        public void onLocationChanged(Location loc) {
-            // Este mŽtodo se ejecuta cada vez que el GPS recibe nuevas coordenadas
-            // debido a la detecci—n de un cambio de ubicacion
-            loc.getLatitude();
-            loc.getLongitude();
-            String Text = "Mi ubicacion actual es: " + "\n Lat = "
-                    + loc.getLatitude() + "\n Long = " + loc.getLongitude();
-            messageTextView.setText(Text);
-            this.mainActivity.setLocation(loc);
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {
-            // Este mŽtodo se ejecuta cuando el GPS es desactivado
-            messageTextView.setText("GPS Desactivado");
-        }
-
-        @Override
-        public void onProviderEnabled(String provider) {
-            // Este mŽtodo se ejecuta cuando el GPS es activado
-            messageTextView.setText("GPS Activado");
-        }
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-            // Este mŽtodo se ejecuta cada vez que se detecta un cambio en el
-            // status del proveedor de localizaci—n (GPS)
-            // Los diferentes Status son:
-            // OUT_OF_SERVICE -> Si el proveedor esta fuera de servicio
-            // TEMPORARILY_UNAVAILABLE -> Temp˜ralmente no disponible pero se
-            // espera que este disponible en breve
-            // AVAILABLE -> Disponible
-        }
-    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_aplication);
+        //Si pinchamos en la imagen nos lleva a una web con un conjunto de tiendas relacionadas con la agricultura
         ImageView img = (ImageView)findViewById(R.id.ImagClick);//encuentra la imagen por su id
-
         img.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -91,12 +46,12 @@ public class BaseAplication extends AppCompatActivity {
                 intent.setData(Uri.parse("http://jaenagricola.es"));
                 startActivity(intent);
             }
-        });//funcion para llevar a la url a la variable iconoujaen en este caso una imagen
+        });
 
-           String user = getIntent().getStringExtra(PARAM_USER);
+           //String user = getIntent().getStringExtra(PARAM_USER);
 
 
-
+//Spinner con las diferentes variables de nuestra aplicacion
             final String[] datos = new String[]{"Riego", "PH", "Abono", "Humedad"};
             ArrayAdapter<String> adaptador = new
                     ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
@@ -105,6 +60,7 @@ public class BaseAplication extends AppCompatActivity {
             adaptador.setDropDownViewResource(
                     android.R.layout.simple_spinner_dropdown_item);
             cmbOpciones.setAdapter(adaptador);
+            //si se pincha en la imagen nos lleva al mapa de la zona
         ImageButton localizacion = (ImageButton) findViewById(R.id.Localizacion);
         localizacion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +72,7 @@ public class BaseAplication extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //Si se pincha en el boton , vamos a realizar una llamada a un numero predeterminado
         Button b_telefono = (Button) findViewById(R.id.botonllamada);
         b_telefono.setOnClickListener(new View.OnClickListener(){
 
