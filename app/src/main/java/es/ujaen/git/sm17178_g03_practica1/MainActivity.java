@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 //Comparamos las fechas, si la actual es mayor que la de expiración debemos volver a pedir el usuario sino
 // se carga directamente la siguiente actividad con los datos anteriores
-        if(Date.compareTo(Expire)>=0){
+        if(Date.compareTo(Expire)>0){
                 Toast.makeText(this,"Bienvenido "+user,Toast.LENGTH_SHORT).show();
                 Intent nueva = new Intent(this, BaseAplication.class);
                 this.startActivity(nueva);

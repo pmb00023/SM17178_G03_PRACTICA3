@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SM17178_G03_PRACTICA2</string>
 
@@ -19,4 +20,14 @@
     <string name="PropiedadesTe">Propiedades</string>
     <string name="base_text">Pincha en la imagen para encontrar tiendas de productos agrarios</string>
     <string name="BotonLlamada">Atención al cliente</string>
+    <string name="title_activity_action">Action</string>
+    <string name="action_riego">Riego</string>
+    <string name="action_ph">PH</string>
+    <string name="action_intro_ph">introduce PH</string>
+    <string name="action_humedad">Humedad</string>
+    <string name="action_abono">Abono</string>
+    <string name="action_temperatura">Temperatura</string>
+    <string name="base_aplication_mensaje">Escribe tu problema y lo resolveremos lo antes posible</string>
+    <string name="base_aplication_propiedades">Configurar y ver estado del terreno</string>
+    <string name="action_enviar">Enviar datos</string>
 </resources>

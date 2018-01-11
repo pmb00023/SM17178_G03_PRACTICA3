@@ -7,6 +7,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +38,7 @@ public class BaseAplication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_aplication);
         //Si pinchamos en la imagen nos lleva a una web con un conjunto de tiendas relacionadas con la agricultura
-        ImageView img = (ImageView)findViewById(R.id.ImagClick);//encuentra la imagen por su id
+        ImageView img = (ImageView) findViewById(R.id.ImagClick);//encuentra la imagen por su id
         img.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -48,19 +50,19 @@ public class BaseAplication extends AppCompatActivity {
             }
         });
 
-           //String user = getIntent().getStringExtra(PARAM_USER);
+        //String user = getIntent().getStringExtra(PARAM_USER);
 
 
 //Spinner con las diferentes variables de nuestra aplicacion
-            final String[] datos = new String[]{"Riego", "PH", "Abono", "Humedad"};
+           /* final String[] datos = new String[]{"Riego", "PH", "Abono", "Humedad"};
             ArrayAdapter<String> adaptador = new
                     ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
             final Spinner cmbOpciones =
                     (Spinner) findViewById(R.id.CmbOpciones);
             adaptador.setDropDownViewResource(
                     android.R.layout.simple_spinner_dropdown_item);
-            cmbOpciones.setAdapter(adaptador);
-            //si se pincha en la imagen nos lleva al mapa de la zona
+            cmbOpciones.setAdapter(adaptador);*/
+        //si se pincha en la imagen nos lleva al mapa de la zona
         ImageButton localizacion = (ImageButton) findViewById(R.id.Localizacion);
         localizacion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +76,7 @@ public class BaseAplication extends AppCompatActivity {
         });
         //Si se pincha en el boton , vamos a realizar una llamada a un numero predeterminado
         Button b_telefono = (Button) findViewById(R.id.botonllamada);
-        b_telefono.setOnClickListener(new View.OnClickListener(){
+        b_telefono.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Uri num = Uri.parse("tel:" + "123456789");
@@ -82,18 +84,25 @@ public class BaseAplication extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        
+
+        Button connect = (Button) findViewById(R.id.base_button);
+        connect.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
+            @Override
+            public void onClick(View view) {
+                Intent nueva = new Intent(getApplicationContext(), Action.class);
+                startActivity(nueva);
+            }
 
 
-
-
-
+        });
     }
-
-
-
-
 }
+
+
+
+
+
 
         /*LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         MyLocationListener mlocListener = new MyLocationListener();
