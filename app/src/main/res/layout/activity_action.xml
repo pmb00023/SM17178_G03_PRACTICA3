@@ -14,6 +14,30 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/action_datos"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                tools:layout_editor_absoluteX="60dp"
+                tools:layout_editor_absoluteY="428dp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -21,10 +45,11 @@
                 android:id="@+id/textView8"
                 android:layout_width="253dp"
                 android:layout_height="wrap_content"
-                android:text="@string/action_riego" />
+                android:text="@string/action_riego"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <ToggleButton
-                android:id="@+id/toggleButton"
+                android:id="@+id/boton riego"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="ToggleButton" />
@@ -32,13 +57,21 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="58dp">
 
             <TextView
                 android:id="@+id/textView10"
-                android:layout_width="252dp"
+                android:layout_width="65dp"
                 android:layout_height="wrap_content"
-                android:text="@string/action_ph" />
+                android:text="@string/action_ph"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="229dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ph_descripcion" />
 
             <EditText
                 android:id="@+id/editPH"
@@ -46,19 +79,26 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/action_intro_ph" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="57dp">
 
             <TextView
                 android:id="@+id/textView12"
-                android:layout_width="252dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/action_humedad" />
+                android:text="@string/action_humedad"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/humedad_descripcion" />
 
             <EditText
                 android:id="@+id/editHumedad"
@@ -66,8 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,10 +114,18 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView13"
-                android:layout_width="253dp"
+                android:id="@+id/hjughuh"
+                android:layout_width="58dp"
                 android:layout_height="wrap_content"
-                android:text="@string/action_abono" />
+                android:text="@string/action_abono"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/humedad_descripcion" />
 
             <EditText
                 android:id="@+id/editAbono"
@@ -86,8 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -96,9 +142,17 @@
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="252dp"
+                android:layout_width="91dp"
                 android:layout_height="wrap_content"
-                android:text="@string/action_temperatura" />
+                android:text="@string/action_temperatura"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/temperatura_descripcion" />
 
             <EditText
                 android:id="@+id/editTemperatura"
@@ -107,13 +161,14 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="133dp"
-            android:gravity="bottom"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Button
@@ -123,6 +178,8 @@
                 android:layout_weight="1"
                 android:gravity="bottom|center"
                 android:text="@string/action_enviar" />
+
         </LinearLayout>
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
