@@ -2,6 +2,7 @@ package es.ujaen.git.sm17178_g03_practica1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -81,6 +82,7 @@ public class BaseAplication extends AppCompatActivity {
             public void onClick(View v) {
                 Uri num = Uri.parse("tel:" + "123456789");
                 Intent i = new Intent(Intent.ACTION_CALL, num);
+
                 startActivity(i);
             }
         });

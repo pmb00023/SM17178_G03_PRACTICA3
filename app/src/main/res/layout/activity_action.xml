@@ -43,16 +43,26 @@
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="253dp"
+                android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:text="@string/action_riego"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <ToggleButton
-                android:id="@+id/boton riego"
-                android:layout_width="120dp"
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="273dp"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton" />
+                android:layout_weight="1"
+                android:text="@string/riego_descripcion" />
+
+            <EditText
+                android:id="@+id/editRiego"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
         </LinearLayout>
 
         <LinearLayout

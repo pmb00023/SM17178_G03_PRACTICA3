@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Action extends AppCompatActivity {
 
-    EditText editPH,editHumedad,editTemperatura;
+    EditText editPH,editHumedad,editTemperatura,editRiego,editAbono;
     Button buttonEnviar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,21 +35,27 @@ public class Action extends AppCompatActivity {
         buttonEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                 editAbono = (EditText) findViewById(R.id.editAbono);
+                 editRiego=(EditText)findViewById(R.id.editRiego) ;
+
                 editHumedad=(EditText)findViewById(R.id.editHumedad);
                 editPH=(EditText)findViewById(R.id.editPH);
                 editTemperatura=(EditText)findViewById(R.id.editTemperatura);
                 buttonEnviar=(Button)findViewById(R.id.buttonEnviar);
                 String humedad=editHumedad.getText().toString();
-                 String ph=editPH.getText().toString();
+                String riego =editRiego.getText().toString();
+                String ph=editPH.getText().toString();
+                String abono=editAbono.getText().toString();
+                String temperatura=editTemperatura.getText().toString();
                 final TextView txt=(TextView)findViewById(R.id.textView16);
                 final String id=editTemperatura.getText().toString();
                 sQlite.abrir();
-                sQlite.anadirTab(ph,humedad);
+                sQlite.anadirTab(ph,humedad,abono,temperatura,riego);
 
                 txt.setText(sQlite.leer());
                 sQlite.cerrar();
 
-                Toast.makeText(getApplicationContext(),"se han almacenado los datos",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Se han almacenado los datos",Toast.LENGTH_SHORT).show();
 
             }
         });
