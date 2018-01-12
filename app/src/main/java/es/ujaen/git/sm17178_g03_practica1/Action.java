@@ -8,7 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+//actividad que al pulsar un boton almacena los datos en la base da datos y los muestra en la parte
+//superior de la vista
 public class Action extends AppCompatActivity {
 
     EditText editPH,editHumedad,editTemperatura,editRiego,editAbono;
@@ -16,13 +17,10 @@ public class Action extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action);
+//cargamos los datos de los textview para poder almacenarlos en la base de datos
 
-        editHumedad=(EditText)findViewById(R.id.editHumedad);
-        editPH=(EditText)findViewById(R.id.editPH);
-        editTemperatura=(EditText)findViewById(R.id.editTemperatura);
         buttonEnviar=(Button)findViewById(R.id.buttonEnviar);
-        final String humedad=editHumedad.getText().toString();
-        final String ph=editPH.getText().toString();
+
          final TextView txt=(TextView)findViewById(R.id.textView16);
          final String id=editTemperatura.getText().toString();
 
@@ -49,10 +47,14 @@ public class Action extends AppCompatActivity {
                 String temperatura=editTemperatura.getText().toString();
                 final TextView txt=(TextView)findViewById(R.id.textView16);
                 final String id=editTemperatura.getText().toString();
+                //abrimos nuestra tabla
                 sQlite.abrir();
+                //pasamos los datos a la base de datos
                 sQlite.anadirTab(ph,humedad,abono,temperatura,riego);
+                //mostramos los datos guardados
 
                 txt.setText(sQlite.leer());
+                //cerramos la tabla de la base de datos
                 sQlite.cerrar();
 
                 Toast.makeText(getApplicationContext(),"Se han almacenado los datos",Toast.LENGTH_SHORT).show();
