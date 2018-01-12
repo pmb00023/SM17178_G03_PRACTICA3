@@ -41,9 +41,9 @@
                 android:text="@string/action_ph" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editPH"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -61,7 +61,7 @@
                 android:text="@string/action_humedad" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/editHumedad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -81,7 +81,7 @@
                 android:text="@string/action_abono" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/editAbono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -101,7 +101,7 @@
                 android:text="@string/action_temperatura" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/editTemperatura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -117,7 +117,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/action_button"
+                android:id="@+id/buttonEnviar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
