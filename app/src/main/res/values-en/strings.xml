@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SM17178_G03_PRACTICA2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_login_title">Practice  1</string>
+    <string name="fragment_login_description">Servicios móviles. Grado en Ingenería Telemática 2017-2018</string>
+    <string name="fragment_login_user">User</string>
+    <string name="fragment_login_password">Password</string>
+    <string name="fragment_login_ip">IP</string>
+    <string name="fragment_login_port">POrt</string>
+    <string name="fragment_login_button">Connect</string>
+    <string name="fragment_app_riego">Activate irragation</string>
+    <string name="activity_button_on">ON</string>
+    <string name="activity_button_OFF">OFF</string>
+    <string name="welcome_name">Welcome to  AGRAPP</string>
+    <string name="welcome_button">Start</string>
+    <string name="Localizacion">Location</string>
+    <string name="PropiedadesTe">Propierties</string>
+    <string name="base_text">Click on the image to found agricultural products</string>
+    <string name="BotonLlamada">Customer service</string><string name="title_activity_action">Action</string>
+    <string name="action_riego">Irragation</string>
+    <string name="action_ph">PH</string>
+    <string name="action_intro_ph">Input PH</string>
+    <string name="action_humedad">Damp</string>
+    <string name="action_abono">Abono</string>
+    <string name="action_temperatura">Heat</string>
+
+    <string name="base_aplication_propiedades">Configure and view terrain status</string>
+    <string name="action_enviar">Send dates</string>
+    <string name="action_datos">Actual values</string>
+    <string name="ph_descripcion">Measured from 0 to 14</string>
+    <string name="humedad_descripcion">Measured as a percentage from 0 to 100</string>
+    <string name="temperatura_descripcion">Can be measured with up to 1 decimal place</string>
+    <string name="riego_descripcion">Input ON or OFF</string>
+</resources>

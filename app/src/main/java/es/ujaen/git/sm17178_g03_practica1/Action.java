@@ -22,7 +22,7 @@ public class Action extends AppCompatActivity {
         buttonEnviar=(Button)findViewById(R.id.buttonEnviar);
 
          final TextView txt=(TextView)findViewById(R.id.textView16);
-         final String id=editTemperatura.getText().toString();
+
 
 
         final SQlite sQlite=new SQlite(this);

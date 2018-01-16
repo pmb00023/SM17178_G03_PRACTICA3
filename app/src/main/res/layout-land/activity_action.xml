@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    tools:context="es.ujaen.git.sm17178_g03_practica1.Action">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_green_light"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/action_datos"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:layout_editor_absoluteX="60dp"
+                tools:layout_editor_absoluteY="428dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="@string/action_riego"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="273dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/riego_descripcion" />
+
+            <EditText
+                android:id="@+id/editRiego"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="@string/action_ph"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ph_descripcion" />
+
+            <EditText
+                android:id="@+id/editPH"
+                android:layout_width="292dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_humedad"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="311dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/humedad_descripcion" />
+
+            <EditText
+                android:id="@+id/editHumedad"
+                android:layout_width="293dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="top">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="91dp"
+                android:layout_height="wrap_content"
+                android:text="@string/action_temperatura"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="301dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:text="@string/temperatura_descripcion" />
+
+            <EditText
+                android:id="@+id/editTemperatura"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/hjughuh"
+                android:layout_width="58dp"
+                android:layout_height="wrap_content"
+                android:text="@string/action_abono"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/humedad_descripcion" />
+
+            <EditText
+                android:id="@+id/editAbono"
+                android:layout_width="261dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonEnviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:text="@string/action_enviar" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
